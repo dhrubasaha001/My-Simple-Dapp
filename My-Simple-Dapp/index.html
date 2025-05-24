@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Simple dApp</title>
+
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS for glass effect, animation, etc. -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-6">
+
+  <div class="glass-card fade-in max-w-md w-full space-y-6">
+  <h1 class="text-3xl font-bold text-center">🚀 My Smart Contract dApp</h1>
+
+  <!-- Connect Wallet -->
+  <!-- Connect Wallet -->
+   <span style="width: 200px; display: flex; justify-content: space-around; width: 100%; margin-top: 10px; margin-right: 10px; margin-left: 10px; height: 50px;">
+<button
+  onclick="connectWallet()"
+  class="btn w-full my-3"
+  id="connectBtn"
+>
+  🔌 Connect Wallet
+</button>
+
+<!-- Input Field (no spacing here, already styled) -->
+<input
+  type="number"
+  id="inputData"
+  placeholder="💎 Enter value here"
+  class="sexy-input w-full p-4 text-lg rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 backdrop-blur-sm"
+/>
+</span>
+</span>
+<!-- Send Data -->
+ <span style="display: flex; justify-content: space-around; width: 100%; margin-top: 10px;">
+<button
+  onclick="setData()"
+  class="btn btn-dark w-full my-3"
+>
+  📤 Send Data
+</button>
+
+<!-- Get Data -->
+<button
+  onclick="getData()"
+  class="btn btn-yellow w-full my-3"
+>
+  📥 Get Data
+</button>
+</span>
+  <!-- Output -->
+  <p id="output" class="text-center text-lg font-mono pt-4"></p>
+</div>
+    <script>
+        // Glass effect and animation
+        document.addEventListener('DOMContentLoaded', function() {
+        const glassCard = document.querySelector('.glass-card');
+        glassCard.classList.add('fade-in');
+        });
+    </script>
+
+  <!-- Ethers.js -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="app.js"></script>
+</body>
+</html>
